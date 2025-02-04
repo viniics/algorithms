@@ -9,8 +9,7 @@ import java.util.Scanner;
 class SearchOcurrencies {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        Path fileName = Path.of(
-                "C:\\Users\\vinii\\OneDrive\\Área de Trabalho\\ATAL\\algorithms\\SearchOcurrencies\\fileToRead.txt");
+        Path fileName = Path.of("SearchOcurrencies/fileToRead.txt");
         String fileToString = Files.readString(fileName);
         System.out.print("Faça sua pesquisa: ");
         String search = sc.nextLine();
@@ -24,7 +23,7 @@ class SearchOcurrencies {
 
         for (int i = 0; i < (file.length() - search.length()); i++) {
             int currentPos = 0;
-            while (currentPos < file.length() && search.charAt(currentPos) == file.charAt(i + currentPos)) {
+            while (currentPos < search.length() && search.charAt(currentPos) == file.charAt(i + currentPos)) {
                 currentPos++;
             }
             if (currentPos == search.length()) {
@@ -35,6 +34,8 @@ class SearchOcurrencies {
     }
 
     private static String processResults(ArrayList<Integer> list) {
-        return "ok";
+        if (list.size()==0) return "Não foram encontrados resultados para a pesquisa!";
+        
+        return "Foram encontradas correspondencias nos seguintes indices: " + list.toString();
     }
 }
