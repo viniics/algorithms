@@ -1,0 +1,4 @@
+package SearchOcurrencies;
+
+class SearchOcurrencies{
+}
