@@ -1,7 +1,9 @@
 package SortingAlgorithms;
 
-public interface Algorithm {
+import SortingAlgorithms.Utils.Swap;
 
-    public void sort(int[] array);
+public abstract class Algorithm {
+    public Swap swap = new Swap();
+    public void sort(int[] array){}
 
 }

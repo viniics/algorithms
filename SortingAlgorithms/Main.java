@@ -1,8 +1,11 @@
 package SortingAlgorithms;
 
+import SortingAlgorithms.Quadratic.BubbleSorter;
+import SortingAlgorithms.Quadratic.SelectorSorter;
+
 public class Main {
     public static void main(String[] args) {
-        Algorithm algorithm =  new BubbleSorter();
+        Algorithm algorithm =  new SelectorSorter();
         int[] array = {9,8,7,6,5,4,3,2};
         algorithm.sort(array);
 
