@@ -21,8 +21,8 @@ class SearchOcurrencies {
 
     private static ArrayList<Integer> searchOcurrencies(String search, String file) {
         ArrayList<Integer> resultIndexes = new ArrayList<>();
-
-        for (int i = 0; i < (file.length() - search.length()); i++) {
+        //Nao eh necessario ir ate o final, apenas checar ate a 
+        for (int i = 0; i < (file.length() - search.length()+1); i++) {
             int currentPos = 0;
             while (currentPos < search.length() && search.charAt(currentPos) == file.charAt(i + currentPos)) {
                 currentPos++;
