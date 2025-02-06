@@ -10,6 +10,7 @@ class SearchOcurrencies {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         Path fileName = Path.of("SearchOcurrencies/fileToRead.txt");
+        //Le o arquivo e converte ele para o tipo String 
         String fileToString = Files.readString(fileName);
         System.out.print("Faça sua pesquisa: ");
         String search = sc.nextLine();
