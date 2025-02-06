@@ -3,6 +3,7 @@ package SortingAlgorithms;
 import SortingAlgorithms.Quadratic.BubbleSorter;
 import SortingAlgorithms.Quadratic.SelectorSorter;
 
+@SuppressWarnings("unused")
 public class Main {
     public static void main(String[] args) {
         Algorithm algorithm =  new SelectorSorter();
