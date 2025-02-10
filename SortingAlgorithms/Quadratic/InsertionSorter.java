@@ -2,21 +2,29 @@ package SortingAlgorithms.Quadratic;
 
 import SortingAlgorithms.Algorithm;
 
-public class InsertionSorter extends Algorithm{
-    // Definição (src: medium.com)
+public class InsertionSorter extends Algorithm {
+    // Definição (src: geeksforce.org)
 
-    // Insertion Sort begins by looking at the second value in the array, and
-    // compares it to the value before it. If the value before it is bigger, you
-    // copy the value and place it one spot to the right. You repeat this process
-    // until you either reach the beginning of the array or the value in question is
-    // not bigger. You then set the index you finished at with the current value you
-    // where testing.
+    // Insertion sort is a simple sorting algorithm that works by iteratively
+    // inserting each element of an unsorted list into its correct position in a
+    // sorted portion of the list. It is like sorting playing cards in your hands.
+    // You split the cards into two groups: the sorted cards and the unsorted cards.
+    // Then, you pick a card from the unsorted group and put it in the right place
+    // in the sorted group.
+
+    // We start with second element of the array as first element in the array is
+    // assumed to be sorted.
+    // Compare second element with the first element and check if the second element is smaller then swap them.
+    // Move to the third element and compare it with the first two elements and put at its correct position
+    // Repeat until the entire array is sorted.
 
     @Override
-    public void sort(int[] array){
-        for(int i = 0; i<array.length-1;i++){
-            while (array[i]<array[i+1] && i>=1) {
-                swap.swap(array, i, i+1);
+    public void sort(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            int current = array[i];
+            int j = i-1;
+            while (current>array[j]&& j>0) {
+                swap.swap(array, i,j);
             }
         }
     }
