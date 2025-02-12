@@ -46,7 +46,7 @@ public class MergeSort extends Algorithm {
             k++;
         }
 
-        while (c1 > sizeArray1) {
+        while (c1 < sizeArray1) {
             array[k] = array1[c1];
             c1++;
             k++;
