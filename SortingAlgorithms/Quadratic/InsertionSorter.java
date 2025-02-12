@@ -20,11 +20,13 @@ public class InsertionSorter extends Algorithm {
 
     @Override
     public void sort(int[] array) {
-        for (int i = 1; i < array.length; i++) {
-            int current = array[i];
-            int j = i-1;
-            while (current>array[j]&& j>0) {
-                swap.swap(array, i,j);
+        for (int i=0;i<array.length;i++){
+            int j = i;
+            while (j>0) {
+                if(array[j-1]>array[j]){
+                    swap.swap(array, j-1, j);
+                }
+                j--;
             }
         }
     }

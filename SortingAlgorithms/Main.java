@@ -8,7 +8,7 @@ import SortingAlgorithms.Quadratic.SelectorSorter;
 public class Main {
     public static void main(String[] args) {
         Algorithm algorithm =  new InsertionSorter();
-        int[] array = {1,3,95,1,9,4,6,0};
+        int[] array = {9,8,7,6,5,4,3,2,1};
         algorithm.sort(array);
         for(int i: array){
             System.out.print(i+ " ");
