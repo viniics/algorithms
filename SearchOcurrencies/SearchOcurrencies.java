@@ -37,6 +37,6 @@ class SearchOcurrencies {
     private static String processResults(ArrayList<Integer> list) {
         if (list.size()==0) return "Não foram encontrados resultados para a pesquisa!";
         
-        return "Foram encontradas correspondencias nos seguintes indices: " + list.toString();
+        return "Foram encontradas "+ list.size()+ " ocorrencias\nNos Seguintes indexes: " + list.toString();
     }
 }
