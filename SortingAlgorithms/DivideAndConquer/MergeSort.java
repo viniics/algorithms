@@ -26,7 +26,8 @@ public class MergeSort extends Algorithm {
         int[] array2 = new int[sizeArray2];
 
         for (int i = 0; i < sizeArray1; i++) {
-            array1[i] = array[leftIndex];
+            //Aqui o bug
+            array1[i] = array[leftIndex+i];
         }
         for (int i = 0; i < sizeArray2; i++) {
             array2[i] = array[mid + 1 + i];
