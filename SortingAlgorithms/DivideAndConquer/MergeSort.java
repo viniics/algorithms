@@ -37,7 +37,7 @@ public class MergeSort extends Algorithm {
         int c2 = 0;
         int k = leftIndex;
         while (c1 < sizeArray1 && c2 < sizeArray2) {
-            if (array1[c1] >= array2[c2]) {
+            if (array1[c1] <= array2[c2]) {
                 array[k] = array1[c1];
                 c1++;
             } else {
