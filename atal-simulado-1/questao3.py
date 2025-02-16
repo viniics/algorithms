@@ -44,4 +44,4 @@ def vasily(a,b):
     else:
         print("NO")
 
-print(vasily(1,11))
+print(vasily(1,10))
