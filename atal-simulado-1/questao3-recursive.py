@@ -25,23 +25,39 @@ xi deve ser obtido a partir de xi - 1 usando qualquer uma das duas operaçõ
 Se houver várias respostas, imprima qualquer uma delas.
 """
 
-path = [int]
-def vasily_helper(a, b):
-    path.append(a)
+
+def vasily_helper(a, b,path):
+    
     if(a>b):
-        return False
+        return None
+    
+    path.append(a)
+
     if(a==b):
-        return True
-    return vasily_helper(a*2,b) or vasily_helper((a*10)+1,b)
+        return path
+    
+    path_dobrar = path.copy()
+    path_adicionar_um = path.copy()
+
+    result = vasily_helper(a * 2, b, path_dobrar)
+    if result:
+        return result
+
+    result = vasily_helper(a * 10 + 1, b, path_adicionar_um)
+    if result:
+        return result
+        
+    return None
 
 
 
 def vasily(a,b):
-    if(vasily_helper(a,b)):
-        print("YES")
-        print(len(path))
-        print(path)
-    else:
+    result = vasily_helper(a,b,[])
+    if(not result):
         print("NO")
+    else:
+        print("YES")
+        print(len(result))
+        print(result)
 
-print(vasily(1,10))
+(vasily(2,162))
