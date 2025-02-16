@@ -42,4 +42,6 @@ def vasily(a, b):
         else:
             break
     print("NO")
-vasily(2, 162)
+
+a, b = map(int, input().split())
+vasily(a, b)

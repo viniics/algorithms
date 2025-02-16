@@ -59,3 +59,7 @@ def vasily(a,b):
         print("YES")
         print(len(result))
         print(result)
+
+
+a, b = map(int, input().split())
+vasily(a, b)
