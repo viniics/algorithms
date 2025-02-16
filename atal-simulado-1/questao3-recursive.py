@@ -59,5 +59,3 @@ def vasily(a,b):
         print("YES")
         print(len(result))
         print(result)
-
-(vasily(2,162))
