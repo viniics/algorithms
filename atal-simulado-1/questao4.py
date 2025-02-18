@@ -41,13 +41,31 @@ def is_diversa(s):
         already_read.append(i)
     return True
 
+def diversas_iniciais(s):
+    if len(s) == 1:
+        return 1
+    if(is_diversa(s)):
+        return 1 + (diversas_iniciais(s[1:]))
+    else:
+        return diversas_iniciais(s[1:])
+    
+def diversas_finais(s):
+    if len(s) == 1:
+        return 1
+    if(is_diversa(s)):
+        return 1 + (diversas_finais(s[:-1]))
+    else:
+        return diversas_finais(s[:-1])
+    
+
 def string_diversas(s):
     if len(s) == 1:
         return 1
     if(is_diversa(s)):
-        return 1 + (string_diversas(s[:-1])) + (string_diversas(s[1:]))
+        return 1+ diversas_iniciais(s[1:]) + diversas_finais(s[:-1])
     else:
-        return string_diversas(s[:-1]) + string_diversas(s[1:])
+        return diversas_iniciais(s[1:]) + diversas_finais(s[:-1])
+    
 
 
 casos_teste = int(input())
