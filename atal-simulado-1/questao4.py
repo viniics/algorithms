@@ -33,9 +33,21 @@ Saída
 Para cada caso de teste, imprima um inteiro — o número de substrings diversas da string s dada.
 """
 
+def is_diversa(s):
+    already_read = []
+    for i in s:
+        if(i in already_read):
+            return False
+        already_read.append(i)
+    return True
 
 def string_diversas(s):
-    return None
+    if len(s) == 1:
+        return 1
+    if(is_diversa(s)):
+        return 1 + (string_diversas(s[:-1])) + (string_diversas(s[1:]))
+    else:
+        return string_diversas(s[:-1]) + string_diversas(s[1:])
 
 
 casos_teste = int(input())
