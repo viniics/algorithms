@@ -32,3 +32,14 @@ A segunda linha de cada caso de teste contém uma string s de comprimento n.
 Saída
 Para cada caso de teste, imprima um inteiro — o número de substrings diversas da string s dada.
 """
+
+
+def string_diversas(s):
+    return None
+
+
+casos_teste = int(input())
+for i in range (casos_teste):
+    size_string = int(input())
+    s = input()
+    print(string_diversas(s))
