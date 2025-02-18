@@ -22,7 +22,24 @@ Limites
 
 """
 
-array = [9,7,5,3,1,0,28]
-array.sort()
+def chefe_matias(array):
+    array = sorted(array, reverse=True)
+    
+    forno1 = array[0] if len(array) > 0 else 0
+    forno2 = array[1] if len(array) > 1 else 0
+    
+    for time in array[2:]:
+        if forno1 <= forno2:
+            forno1 += time
+        else:
+            forno2 += time
 
-first = 1
+    return max(forno1, forno2)
+
+
+
+T = int(input().strip())
+for _ in range(T):
+    n = int(input().strip())
+    array = list(map(int, input().split()))
+    print(chefe_matias(array))
