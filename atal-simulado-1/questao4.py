@@ -33,12 +33,18 @@ Saída
 Para cada caso de teste, imprima um inteiro — o número de substrings diversas da string s dada.
 """
 
-def is_diversa(s):
+def count_different(s):
     already_read = []
     for i in s:
-        if(i in already_read):
-            return False
-        already_read.append(i)
+        if(i not in already_read):
+            already_read.append(i)
+    return len(already_read)
+
+def is_diversa(s):
+    for i in s:
+        count = s.count(i)
+        if(count>(count_different(s))):
+            return False   
     return True
 
 def diversas_iniciais(s):
@@ -57,14 +63,22 @@ def diversas_finais(s):
     else:
         return diversas_finais(s[:-1])
     
+def diversas_meio(s):
+    if(len(s)==1):
+        return 1
+    if(is_diversa(s)):
+        return 1+diversas_meio(s[1:-1])
+    else:
+        return diversas_meio(s[1:-1])
+    
 
 def string_diversas(s):
     if len(s) == 1:
         return 1
     if(is_diversa(s)):
-        return 1+ diversas_iniciais(s[1:]) + diversas_finais(s[:-1])
+        return 1+ diversas_iniciais(s[1:]) + diversas_finais(s[:-1])+ diversas_meio(s[1:-1])
     else:
-        return diversas_iniciais(s[1:]) + diversas_finais(s[:-1])
+        return diversas_iniciais(s[1:]) + diversas_finais(s[:-1]) + diversas_meio(s[1:-1])
     
 
 
