@@ -46,41 +46,13 @@ def is_diversa(s):
         if(count>(count_different(s))):
             return False   
     return True
-
-def diversas_iniciais(s):
-    if len(s) == 1:
-        return 1
-    if(is_diversa(s)):
-        return 1 + (diversas_iniciais(s[1:]))
-    else:
-        return diversas_iniciais(s[1:])
     
-def diversas_finais(s):
-    if len(s) == 1:
-        return 1
-    if(is_diversa(s)):
-        return 1 + (diversas_finais(s[:-1]))
-    else:
-        return diversas_finais(s[:-1])
-    
-def diversas_meio(s):
-    if(len(s)==1):
-        return 1
-    if(is_diversa(s)):
-        return 1+diversas_meio(s[1:-1])
-    else:
-        return diversas_meio(s[1:-1])
-    
-
 def string_diversas(s):
+    if len(s) == 0:
+        return 0
     if len(s) == 1:
         return 1
-    if(is_diversa(s)):
-        return 1+ diversas_iniciais(s[1:]) + diversas_finais(s[:-1])+ diversas_meio(s[1:-1])
-    else:
-        return diversas_iniciais(s[1:]) + diversas_finais(s[:-1]) + diversas_meio(s[1:-1])
-    
-
+    return (1 if is_diversa(s) else 0) + string_diversas(s[1:]) + string_diversas(s[:-1]) -string_diversas(s[1:-1])
 
 casos_teste = int(input())
 for i in range (casos_teste):
