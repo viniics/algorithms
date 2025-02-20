@@ -11,7 +11,13 @@ public class Consumer implements Runnable {
 
     @Override
     public void run() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'run'");
+       while (true) {
+        try {
+            int newValue = buffer.get();
+            System.out.println("Produtor " + consumerId + " inseriu o valor " + newValue + " no buffer.");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+       }
     }
 }
