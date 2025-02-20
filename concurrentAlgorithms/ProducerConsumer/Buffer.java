@@ -27,7 +27,7 @@ public class Buffer {
                 currPutIndex = 0;
             }
             currentSize++;
-            notEmpty.signalAll();
+            notEmpty.signal();
         } finally {
             lock.unlock();
         }
@@ -46,7 +46,7 @@ public class Buffer {
                 currTakeIndex = 0;
             }
             currentSize--;
-            notFull.signalAll();
+            notFull.signal();
             return value;
         } finally {
             lock.unlock();
