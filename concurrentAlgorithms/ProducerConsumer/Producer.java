@@ -20,7 +20,7 @@ public class Producer implements Runnable {
                 buffer.put(newValue);
                 System.out.println("Produtor " + producerId + " inseriu o valor " + newValue + " no buffer.");
             } catch (InterruptedException e) {
-                e.printStackTrace()
+                e.printStackTrace();
             }
         }
     }
