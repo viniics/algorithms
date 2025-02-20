@@ -9,7 +9,7 @@ public class Buffer {
     private final Lock lock = new ReentrantLock();
     final Condition notFull = lock.newCondition();
     final Condition notEmpty = lock.newCondition();
-    int inPos, takePos, count = 0;
+    int currPutIndex, currTakeIndex, currentSize = 0;
 
     public Buffer(int size) {
         this.buffer = new int[size];
@@ -18,15 +18,15 @@ public class Buffer {
     public void put(int value) throws InterruptedException {
         lock.lock();
         try {
-            while (count == buffer.length) {
+            while (currentSize == buffer.length) {
                 notFull.await();
             }
-            buffer[inPos] = value;
-            inPos++;
-            if (inPos == buffer.length) {
-                inPos = 0;
+            buffer[currPutIndex] = value;
+            currPutIndex++;
+            if (currPutIndex == buffer.length) {
+                currPutIndex = 0;
             }
-            count++;
+            currentSize++;
             notEmpty.signalAll();
         } finally {
             lock.unlock();
@@ -37,15 +37,15 @@ public class Buffer {
     public int get() throws InterruptedException {
         lock.lock();
         try {
-            while (count == 0) {
+            while (currentSize == 0) {
                 notEmpty.await();
             }
-            int value = buffer[takePos];
-            takePos++;
-            if (takePos == buffer.length) {
-                takePos = 0;
+            int value = buffer[currTakeIndex];
+            currTakeIndex++;
+            if (currTakeIndex == buffer.length) {
+                currTakeIndex = 0;
             }
-            count--;
+            currentSize--;
             notFull.signalAll();
             return value;
         } finally {
