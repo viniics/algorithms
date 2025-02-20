@@ -16,6 +16,7 @@ public class Buffer {
     }
 
     public void put(int value) throws InterruptedException {
+        lock.lock();
         try {
             while (count == buffer.length) {
                 notFull.await();
@@ -28,12 +29,13 @@ public class Buffer {
             count++;
             notEmpty.signalAll();
         } finally {
-
+            lock.unlock();
         }
 
     }
 
     public int get() throws InterruptedException {
+        lock.lock();
         try {
             while (count == 0) {
                 notEmpty.await();
@@ -47,7 +49,7 @@ public class Buffer {
             notFull.signalAll();
             return value;
         } finally {
-
+            lock.unlock();
         }
 
     }
