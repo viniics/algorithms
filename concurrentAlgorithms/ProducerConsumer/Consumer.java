@@ -14,7 +14,8 @@ public class Consumer implements Runnable {
        while (true) {
         try {
             int newValue = buffer.get();
-            System.out.println("Produtor " + consumerId + " inseriu o valor " + newValue + " no buffer.");
+            System.out.println("Consumidor " + consumerId + " consumiu o valor " + newValue + " no buffer.");
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

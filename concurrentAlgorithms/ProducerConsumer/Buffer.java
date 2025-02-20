@@ -18,7 +18,7 @@ public class Buffer {
     public void put(int value) throws InterruptedException {
         lock.lock();
         try {
-            while (currentSize == buffer.length) {
+            while (currentSize == buffer.length-1) {
                 notFull.await();
             }
             buffer[currPutIndex] = value;

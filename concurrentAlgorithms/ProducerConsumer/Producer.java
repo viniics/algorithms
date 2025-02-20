@@ -19,6 +19,7 @@ public class Producer implements Runnable {
                 int newValue = random.nextInt(100);
                 buffer.put(newValue);
                 System.out.println("Produtor " + producerId + " inseriu o valor " + newValue + " no buffer.");
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
