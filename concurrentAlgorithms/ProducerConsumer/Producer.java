@@ -1,8 +1,11 @@
 package concurrentAlgorithms.ProducerConsumer;
 
+import java.util.Random;
+
 public class Producer implements Runnable {
     private final Buffer buffer;
     private final int producerId;
+    private final Random random = new Random();
 
     public Producer(Buffer buffer, int producerId) {
         this.buffer = buffer;
@@ -11,8 +14,15 @@ public class Producer implements Runnable {
 
     @Override
     public void run() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'run'");
+        while (true) {
+            try {
+                int newValue = random.nextInt(100);
+                buffer.put(newValue);
+                System.out.println("Produtor " + producerId + " inseriu o valor " + newValue + " no buffer.");
+            } catch (InterruptedException e) {
+                e.printStackTrace()
+            }
+        }
     }
 
 }

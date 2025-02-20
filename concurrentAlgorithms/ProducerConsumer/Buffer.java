@@ -53,4 +53,13 @@ public class Buffer {
         }
 
     }
+    public int getCurrentSize(){
+        lock.lock();
+        try{
+            return currentSize;
+        }
+        finally{
+            lock.unlock();
+        }
+    }
 }
