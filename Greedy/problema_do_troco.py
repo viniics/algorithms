@@ -1,4 +1,4 @@
-#O problema do troco consiste em acumular uma certa quantia somando o menor numero possível de moedas
+#O problema do troco consiste em acumular uma certa quantia somando o menor numero possível de moedas!
 
 def calcula_troco(array,troco):
     soma_atual = 0
