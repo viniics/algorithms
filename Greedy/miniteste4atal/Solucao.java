@@ -14,7 +14,7 @@ public class Solucao {
         List<Atividade> atividades = Arrays.asList(a1, a2);
         sortByLowestExecutionTime.sort(atividades);
         List<Atividade> greedyAtividades = greedyAtividades(atividades);
-        System.out.println(greedyAtividades.toString());
+        System.out.println(greedyAtividades.toString()); //todo: colocar melhor como as atividades sao representadas
     }
 
     List<Atividade> greedyAtividades(List<Atividade> atividades) {
