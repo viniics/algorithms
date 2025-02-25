@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Solucao {
     private final AtividadeService atividadeService = new AtividadeService();
+
     void main() {
         List<Atividade> atividades = criaAtividades();
         System.out.println(atividadeService.greedyAtividades(atividades).toString());
