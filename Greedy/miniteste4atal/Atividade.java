@@ -17,4 +17,12 @@ public class Atividade {
         return horaTermino;
     }
 
+    public int[] getIntervaloDeExecucao(){
+        int[] intervaloExec = new int[horaTermino-horaInicio];
+        for(int i = horaInicio; i< horaTermino;i++){
+            intervaloExec[i-horaInicio] = i;
+        }
+        return intervaloExec;
+    }
+
 }

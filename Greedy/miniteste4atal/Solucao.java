@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Solucao {
+    Utils utils = new Utils();
     SortByLowestExecutionTime sortByLowestExecutionTime = new SortByLowestExecutionTime();
 
     void main() {
@@ -26,8 +27,32 @@ public class Solucao {
         return greedyOut;
     }
 
-    boolean horarioIsLivre(List<Atividade> greedyOut, Atividade atividade) {
-        
+    boolean horarioIsLivre(List<Atividade> currentAtividades, Atividade atividade) {
+        for (Atividade a : currentAtividades) {
+            if (sobrepoeHorario(a, atividade)) {
+                return false;
+            }
+        }
         return true;
     }
+
+    boolean sobrepoeHorario(Atividade atividade1, Atividade atividade2) {
+        int[] intervaloA1 = atividade1.getIntervaloDeExecucao();
+        int[] intervaloA2 = atividade2.getIntervaloDeExecucao();
+
+        for (int i : intervaloA1) {
+            if (utils.contains(intervaloA2, i)) {
+                return true;
+            }
+        }
+
+        for (int i : intervaloA2) {
+            if (utils.contains(intervaloA1, i)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }
