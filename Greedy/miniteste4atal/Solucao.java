@@ -30,29 +30,13 @@ public class Solucao {
 
     boolean horarioIsLivre(List<Atividade> currentAtividades, Atividade atividade) {
         for (Atividade a : currentAtividades) {
-            if (sobrepoeHorario(a, atividade)) {
+            if (utils.sobrepoeHorario(a, atividade)) {
                 return false;
             }
         }
         return true;
     }
 
-    boolean sobrepoeHorario(Atividade atividade1, Atividade atividade2) {
-        int[] intervaloA1 = atividade1.getIntervaloDeExecucao();
-        int[] intervaloA2 = atividade2.getIntervaloDeExecucao();
-
-        for (int i : intervaloA1) {
-            if (utils.contains(intervaloA2, i)) {
-                return true;
-            }
-        }
-
-        for (int i : intervaloA2) {
-            if (utils.contains(intervaloA1, i)) {
-                return true;
-            }
-        }
-        return false;
-    }
+    
 
 }
