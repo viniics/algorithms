@@ -9,9 +9,10 @@ public class Solucao {
     SortByLowestExecutionTime sortByLowestExecutionTime = new SortByLowestExecutionTime();
 
     void main() {
-        Atividade a1 = new Atividade(10, 12);
-        Atividade a2 = new Atividade(14, 17);
-        List<Atividade> atividades = Arrays.asList(a1, a2);
+        Atividade a1 = new Atividade(10, 12,"a1");
+        Atividade a2 = new Atividade(14, 18,"a2");
+        Atividade a3 = new Atividade(18, 19,"a3");
+        List<Atividade> atividades = Arrays.asList(a3,a1, a2);
         sortByLowestExecutionTime.sort(atividades);
         List<Atividade> greedyAtividades = greedyAtividades(atividades);
         System.out.println(greedyAtividades.toString()); //todo: colocar melhor como as atividades sao representadas
@@ -51,7 +52,6 @@ public class Solucao {
                 return true;
             }
         }
-
         return false;
     }
 
