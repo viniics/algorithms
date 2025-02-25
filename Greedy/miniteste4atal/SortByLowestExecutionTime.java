@@ -1,8 +1,9 @@
 package Greedy.miniteste4atal;
 
-public class SortByLowestExecutionTime {
-    
-    public void sortByLowestExecutionTime(Atividade[] atividades){
+import java.util.List;
 
+public class SortByLowestExecutionTime {
+
+    public void sort(List<Atividade> atividades) {
     }
 }
