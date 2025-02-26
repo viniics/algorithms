@@ -36,13 +36,13 @@ class TypingSimulator {
     static int controlSpeed(int currentPos, int fraseLen) {
         // Nos primeiros 25% do texto, o terminal "lê" numa velocidade média
         if (currentPos < (fraseLen / 4)) {
-            return random.nextInt(45);
+            return random.nextInt(25);
         }
         // Nos últimos 10% do texto, o terminal imprime numa velocidade mais reduzida
-        else if (currentPos > (9 * fraseLen / 10))
-            return random.nextInt(60);
-        // Durante 25-90% do texto, o terminal imprime de forma bem mais acelerada, o
+        else if (currentPos > (8 * fraseLen / 10))
+            return random.nextInt(35);
+        // Durante 25-80% do texto, o terminal imprime de forma bem mais acelerada, o
         // que causa a sensação de progresso e de fluidez do programa
-        return random.nextInt(25);
+        return random.nextInt(15);
     }
 }
