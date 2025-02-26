@@ -15,8 +15,11 @@ class TypingSimulator {
     public static void main(String[] args) throws InterruptedException {
 
         String frase = "Essa frase vai ser escrita letra por letra!\nBom dia Brasil\nEu não Usei o ChatGPT( ͡° ͜ʖ ͡°)\n"
-                + loremIpsum() + "\n\n";
-        Thread.sleep(100);
+                + loremIpsum() + "\n";
+        readPhrase(frase);
+    }
+
+    static void readPhrase(String frase) throws InterruptedException {
         for (int i = 0; i < frase.length(); i++) {
             char currChar = frase.charAt(i);
             Thread.sleep(controlSpeed(i, frase.length()));
