@@ -1,4 +1,5 @@
-// Durante uma aula, observei um colega utilizando o DeepSeek e prestei atencao ao fato que as IA's num geral escrevem suas respostas em texto caractere por caractere.
+// Durante uma aula, observei um colega utilizando o DeepSeek e prestei atencao ao fato que as IA's, num geral, 
+// escrevem suas respostas em texto caractere por caractere.
 
 // Embora ja tenha utilizado diversas vezes as tecnologias, foi a primeira vez que realmente parei, refleti e me dei conta disso.
 
