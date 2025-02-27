@@ -5,12 +5,12 @@ def isSuperSorte(num):
     if(len(numStr)%2!= 0):
         return False
     for x in numStr:
+        if(x!="4" and x!= "7"):
+            return False
         if(x=="4"):
             qtd4+=1
-        elif(x=="7"):
-            qtd7+=1
         else:
-            return False
+            qtd7+=1
     return qtd7==qtd4 and qtd4!=0
 
 def nextMenor(num):
