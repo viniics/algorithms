@@ -1,0 +1,7 @@
+Essa frase vai ser escrita letra por letra!
+Bom dia Brasil
+Eu não Usei o ChatGPT( ͡° ͜ʖ ͡°)
+Aqui voce pode escrever qualquer coisa que o terminal vai digitar como se fosse uma IA escrevendo
+O programa tambem muda a velocidade da "digitação" dependendo de qual ponto do texto nós estamos.
+Durante o começo, ele digita levemente mais devagar, durante a metade do programa, a "digitação" eh mais rápida, e no fim, ele desacelera um pouco.
+Vou buscar se já há outras formas de fazer isso com bibliotecas nativas no Java, mas foi uma experiencia boa :D

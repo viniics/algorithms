@@ -8,15 +8,19 @@
 // O código abaixo foi desenvolvido utilizando apenas minha intuição e conhecimentos que já possuo.
 // Não pesquisei se já haviam bibliotecas prontas para esse problema nem tampouco fiz consulta à alguma LLM
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Random;
 
 class TypingSimulator {
     static final Random random = new Random();
 
-    public static void main(String[] args) throws InterruptedException {
-
-        String frase = "Essa frase vai ser escrita letra por letra!\nBom dia Brasil\nEu não Usei o ChatGPT( ͡° ͜ʖ ͡°)\n"
-                + loremIpsum() + "\n";
+    public static void main(String[] args) throws InterruptedException, IOException {
+        // Reading a file
+        Path fileName = Path.of("StringManipulation/fileToType.txt");
+        String fileToString = Files.readString(fileName);
+        String frase = fileToString + loremIpsum() + "\n";
         readPhrase(frase);
     }
 
@@ -39,10 +43,10 @@ class TypingSimulator {
             return random.nextInt(25);
         }
         // Nos últimos 10% do texto, o terminal imprime numa velocidade mais reduzida
-        else if (currentPos > (8 * fraseLen / 10))
-            return random.nextInt(35);
+        else if (currentPos > (9 * fraseLen / 10))
+            return random.nextInt(25);
         // Durante 25-80% do texto, o terminal imprime de forma bem mais acelerada, o
         // que causa a sensação de progresso e de fluidez do programa
-        return random.nextInt(15);
+        return random.nextInt(10);
     }
 }
