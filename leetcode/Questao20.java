@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.Stack;
 
-public class Questão20 {
+public class Questao20 {
     
     public boolean isValid(String s){
         Stack<Character> pilha = new Stack<Character>();
