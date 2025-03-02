@@ -1,5 +1,4 @@
-// Link: https://leetcode.com/problems/merge-two-2d-arrays-by-summing-values/?envType=daily-question&envId=2025-03-02
-
+// Link: https://leetcode.com/problems/merge-two-2d-arrays-by-summing-values
 package leetcode;
 
 import java.util.ArrayList;
