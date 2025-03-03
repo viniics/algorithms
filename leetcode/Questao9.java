@@ -1,3 +1,4 @@
+// Link: https://leetcode.com/problems/palindrome-number
 package leetcode;
 
 public class Questao9 {
@@ -10,7 +11,7 @@ public class Questao9 {
     char[] intToCharArr = String.valueOf(x).toCharArray();
     int i = 0;
     int j = intToCharArr.length-1;
-    while (i!=j) {
+    while (i<j) {
         if(intToCharArr[i]!=intToCharArr[j]){
             return false;
         }
