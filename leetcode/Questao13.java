@@ -43,5 +43,7 @@ public class Questao13 {
 
     void main(){
         System.out.println(romanToInt("IV"));
+        System.out.println(romanToInt("MCMXCIV"));
+        System.out.println(romanToInt("LVIII"));
     }
 }
