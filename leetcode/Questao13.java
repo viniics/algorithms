@@ -7,7 +7,7 @@ public class Questao13 {
         int result = 0;
         for (int i = 0; i<charArr.length-1;i++){
             if(convert(charArr[i])<convert(charArr[i+1])){
-                result += convert(charArr[i+1])-convert(charArr[i]);
+                result -= convert(charArr[i]);
             }
             else{
                 result += convert(charArr[i]);
@@ -42,6 +42,6 @@ public class Questao13 {
 
 
     void main(){
-        System.out.println(romanToInt("III"));
+        System.out.println(romanToInt("IV"));
     }
 }
