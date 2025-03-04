@@ -4,9 +4,18 @@ package leetcode;
 public class Questao13 {
     public int romanToInt(String s){
         char[] charArr = s.toCharArray();
-        
+        int result = 0;
+        for (int i = 0; i<charArr.length-1;i++){
+            if(convert(charArr[i])<convert(charArr[i+1])){
+                result += convert(charArr[i+1])-convert(charArr[i]);
+            }
+            else{
+                result += convert(charArr[i]);
+            }
+        }
+        result+= convert(charArr[charArr.length-1]);
 
-        return 0;
+        return result;
     }
 
 
@@ -29,5 +38,10 @@ public class Questao13 {
                 return 1000;
         }
         return c;
+    }
+
+
+    void main(){
+        System.out.println(romanToInt("III"));
     }
 }
