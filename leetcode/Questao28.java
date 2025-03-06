@@ -7,7 +7,7 @@ public class Questao28 {
         // Esse trecho de codigo nao eh obrigatorio, eh apenas para uma otimizacao de um caso bastante especifico
         if (needle.length() > haystack.length()) return -1;
 
-        for (int i = 0; i < haystack.length(); i++) {
+        for (int i = 0; i <= haystack.length()-needle.length(); i++) {
             // Como uma otimização ao algorítmo de força bruta, só checamos se ele encontrar o caractere inicial
             if (haystack.charAt(i)== needle.charAt(0)) {
                 int isValid = 0;
