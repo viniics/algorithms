@@ -1,17 +1,28 @@
 // Link: https://leetcode.com/problems/length-of-last-word/ 
 package leetcode;
+
 class Questao58{
-    // Isso ainda nao cobre os casos que há espaços vazios no final
-    public static int lengthOfLastWord(String s) {
+    // Complexity: O(N)
+    public int lengthOfLastWord(String s) {
             int i = s.length()-1;
-            // boolean isValid = false;
-            while (s.charAt(i)!=' ') {
+            int lastWordLen = 0;
+            // Loop que ignora todos os espacos vazios no final da String
+            while (s.charAt(i) == ' ') {
                 i--;
             }
-            return s.length()-1-i;
+            // Conta os caracteres ate o proximo espaco vazio ou ate o final da String
+            while (i>=0 && s.charAt(i)!= ' ') {
+                i--;
+                lastWordLen ++;
+            }
+            return lastWordLen;
         }
-    
-        public static void main(String[] args) {
+        
+        // Testes disponveis pelo leetcode
+        void main(String[] args) {
+            System.out.println(lengthOfLastWord("Hello World"));
+            System.out.println(lengthOfLastWord("   fly me   to   the moon  "));
             System.out.println(lengthOfLastWord("luffy is still joyboy"));
+            System.out.println(lengthOfLastWord("a"));
     }
 }
