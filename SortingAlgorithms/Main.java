@@ -1,9 +1,11 @@
 package SortingAlgorithms;
 
 import SortingAlgorithms.DivideAndConquer.MergeSort;
+import SortingAlgorithms.Other.CountingSort;
 import SortingAlgorithms.Quadratic.BubbleSorter;
 import SortingAlgorithms.Quadratic.InsertionSorter;
 import SortingAlgorithms.Quadratic.SelectorSorter;
+
 
 @SuppressWarnings("unused")
 public class Main {
