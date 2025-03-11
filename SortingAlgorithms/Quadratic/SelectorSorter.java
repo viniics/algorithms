@@ -13,7 +13,7 @@ public class SelectorSorter extends Algorithm {
                     lowestValue = j;
                 }
             }
-            swap.swap(array, i, lowestValue);
+            utils.swap(array, i, lowestValue);
         }
     }
 }

@@ -1,9 +1,9 @@
 package SortingAlgorithms;
 
-import SortingAlgorithms.Utils.Swap;
+import SortingAlgorithms.Utils.Utils;
 
 public abstract class Algorithm {
-    public Swap swap = new Swap();
+    public Utils utils = new Utils();
     public void sort(int[] array){}
 
 }

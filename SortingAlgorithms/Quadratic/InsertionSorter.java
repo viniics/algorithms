@@ -26,7 +26,7 @@ public class InsertionSorter extends Algorithm {
             int j = i;
             while (j > 0) {
                 if (array[j - 1] > array[j]) {
-                    swap.swap(array, j - 1, j);
+                    utils.swap(array, j - 1, j);
                 }
                 j--;
             }
@@ -38,7 +38,7 @@ public class InsertionSorter extends Algorithm {
         for (int i = 1; i < array.length; i++) {
             int j = i;
             while (j > 0 && (array[j - 1] > array[j])) {
-                swap.swap(array, j - 1, j);
+                utils.swap(array, j - 1, j);
                 j--;
             }
         }

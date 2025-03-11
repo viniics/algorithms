@@ -9,7 +9,7 @@ public class BubbleSorter extends Algorithm {
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
                 if (array[i] > array[j]) {
-                    swap.swap(array, i, j);
+                    utils.swap(array, i, j);
                 }
             }
         }
