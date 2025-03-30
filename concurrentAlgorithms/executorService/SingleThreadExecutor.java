@@ -10,8 +10,8 @@ public class SingleThreadExecutor {
         for (int i = 1; i <= 15; i++) {
             executorService.execute(new Task(i));
         }
+        executorService.shutdown();
         executorService.awaitTermination(10, TimeUnit.SECONDS);
-        executorService.shutdownNow();
         System.out.println("Fim do programa!");
     }
 }
