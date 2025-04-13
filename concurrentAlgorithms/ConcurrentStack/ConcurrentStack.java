@@ -12,6 +12,10 @@ class Node {
     Node(Integer value) {
         this.value = value;
     }
+
+    public Integer getValue() {
+        return value;
+    }
 }
 
 public class ConcurrentStack {
@@ -19,16 +23,46 @@ public class ConcurrentStack {
     ReadWriteLock lock = new ReentrantReadWriteLock();
     Lock writeLock = lock.writeLock();
     Lock readLock = lock.readLock();
+
     public ConcurrentStack() {
         head = null;
     }
 
     public boolean isEmpty() {
-        readLock.lock();
+        writeLock.lock();
         try {
             return head == null;
         } finally {
+            writeLock.unlock();
+        }
+    }
+
+    public Integer pop() {
+        readLock.lock();
+        writeLock.lock();
+        try {
+            if (head == null) {
+                return null;
+            }
+            Integer value = head.value;
+            head = head.next;
+            return value;
+        } finally {
+            writeLock.unlock();
             readLock.unlock();
         }
     }
+
+    public void push(Integer value) {
+        readLock.lock();
+        writeLock.lock();
+        try {
+            Node newNode = new Node(value);
+            newNode.next = head;
+            head = newNode;
+        } finally {
+            writeLock.unlock();
+            readLock.unlock();
+        }
+    }   
 }
