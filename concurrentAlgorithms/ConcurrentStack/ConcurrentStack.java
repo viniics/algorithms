@@ -29,16 +29,15 @@ public class ConcurrentStack {
     }
 
     public boolean isEmpty() {
-        writeLock.lock();
+        readLock.lock();
         try {
             return head == null;
         } finally {
-            writeLock.unlock();
+            readLock.unlock();
         }
     }
 
     public Integer pop() {
-        readLock.lock();
         writeLock.lock();
         try {
             if (head == null) {
@@ -49,12 +48,10 @@ public class ConcurrentStack {
             return value;
         } finally {
             writeLock.unlock();
-            readLock.unlock();
         }
     }
 
     public void push(Integer value) {
-        readLock.lock();
         writeLock.lock();
         try {
             Node newNode = new Node(value);
@@ -62,7 +59,6 @@ public class ConcurrentStack {
             head = newNode;
         } finally {
             writeLock.unlock();
-            readLock.unlock();
         }
-    }   
+    }
 }
